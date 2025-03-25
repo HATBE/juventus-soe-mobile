@@ -1,6 +1,9 @@
 package ch.hatbe.fitapp;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +16,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        var inputUsername = (EditText) findViewById(R.id.inputUsername);
+
+        var btnLogin = (Button) findViewById(R.id.buttonLogin);
+        btnLogin.setOnClickListener((view) -> {
+
+            Log.i("MAIN", inputUsername.getText().toString());
+
         });
     }
 }
