@@ -13,6 +13,21 @@
         android:theme="@style/Theme.FitApp"
         tools:targetApi="31">
         <activity
+            android:name=".rating.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".rating.LegendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".calculator.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".calculator.EntryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
