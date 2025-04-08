@@ -5,17 +5,12 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
+import ch.hatbe.fitapp.BaseActivity;
 import ch.hatbe.fitapp.R;
 import ch.hatbe.fitapp.util.BMI;
 import ch.hatbe.fitapp.util.BMIclass;
 
-public class LegendActivity extends AppCompatActivity {
+public class LegendActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

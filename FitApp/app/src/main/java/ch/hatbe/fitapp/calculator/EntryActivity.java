@@ -8,11 +8,12 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ch.hatbe.fitapp.BaseActivity;
 import ch.hatbe.fitapp.HomeActivity;
 import ch.hatbe.fitapp.R;
 import ch.hatbe.fitapp.util.BMI;
 
-public class EntryActivity extends AppCompatActivity {
+public class EntryActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +44,6 @@ public class EntryActivity extends AppCompatActivity {
         btnClear.setOnClickListener((view) -> {
             inputHeight.setText("");
             inputWeight.setText("");
-        });
-
-        var btnBack = (Button) findViewById(R.id.btnBack);
-        btnBack.setOnClickListener((view) -> {
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
         });
 
     }

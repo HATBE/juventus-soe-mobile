@@ -13,6 +13,12 @@
         android:theme="@style/Theme.FitApp"
         tools:targetApi="31">
         <activity
+            android:name=".history.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".config.OverviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".rating.DetailActivity"
             android:exported="false" />
         <activity

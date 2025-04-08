@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import ch.hatbe.fitapp.calculator.EntryActivity;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

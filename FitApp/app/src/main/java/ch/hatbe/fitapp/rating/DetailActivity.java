@@ -9,11 +9,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import ch.hatbe.fitapp.BaseActivity;
 import ch.hatbe.fitapp.R;
 import ch.hatbe.fitapp.util.BMI;
 import ch.hatbe.fitapp.util.BMIclass;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

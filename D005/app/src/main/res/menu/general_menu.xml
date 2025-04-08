@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_general"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_general_item_apple" android:title="Apple" />
+    <item android:title="Banana" android:id="@+id/menu_general_item_banana" android:enabled="false"/>
+    <item android:title="Clementine" android:id="@+id/menu_general_item_clementine" />
+</menu>

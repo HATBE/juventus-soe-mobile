@@ -7,13 +7,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ch.hatbe.fitapp.BaseActivity;
 import ch.hatbe.fitapp.HomeActivity;
 import ch.hatbe.fitapp.R;
 import ch.hatbe.fitapp.rating.LegendActivity;
 import ch.hatbe.fitapp.util.BMI;
 import ch.hatbe.fitapp.util.BMIclass;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,6 @@ public class ResultActivity extends AppCompatActivity {
         } else {
             labelRes.setText("BMI value out of range: " + bmiValue);
         }
-
-        Button btnBack = findViewById(R.id.btnBack2);
-        btnBack.setOnClickListener(view -> {
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
-        });
 
         Button btnLegend = findViewById(R.id.btnLegend);
         btnLegend.setOnClickListener(view -> {
