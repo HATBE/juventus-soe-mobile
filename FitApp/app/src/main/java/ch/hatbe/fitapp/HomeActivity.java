@@ -19,9 +19,9 @@ public class HomeActivity extends BaseActivity {
         var usernameLabel = (TextView) findViewById(R.id.labelUsername);
 
         var sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
-        var output = sharedPreferences.getString("username", "NO_VALUE");
+        var username = sharedPreferences.getString("username", "NO_VALUE");
 
-        usernameLabel.setText(output);
+        usernameLabel.setText(String.format(getString(R.string.greeting), username));
 
         var btnLogout = (Button) findViewById(R.id.btnLogout);
         btnLogout.setOnClickListener((view) -> {

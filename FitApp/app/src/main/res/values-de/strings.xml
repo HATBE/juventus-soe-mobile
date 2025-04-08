@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="greeting">Hallo %s</string>
+    <string name="login">Einloggen</string>
+    <string name="username">Benutzername</string>
+    <string name="calculate_bmi">BMI berechnen</string>
+    <string name="logout">Ausloggen</string>
+    <string name="height">Höhe (cm)</string>
+    <string name="weight">Gewicht (kg)</string>
+    <string name="calculate">Berechnen</string>
+    <string name="clear">Leeren</string>
+    <string name="calculator_entry">Rechner eingabe</string>
+    <string name="bmi_result">Dein BMI ist: %s</string>
+    <string name="legend">Legende</string>
+</resources>

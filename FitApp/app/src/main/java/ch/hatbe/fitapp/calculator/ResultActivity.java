@@ -1,5 +1,6 @@
 package ch.hatbe.fitapp.calculator;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import ch.hatbe.fitapp.util.BMIclass;
 
 public class ResultActivity extends BaseActivity {
 
+    @SuppressLint({"StringFormatMatches", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,7 @@ public class ResultActivity extends BaseActivity {
 
         BMIclass bmiObject = BMI.getLegendByNumber(bmiValue);
         if (bmiObject != null) {
-            labelRes.setText("Your BMI is: " + bmiValue + "\n" + bmiObject.getName());
+            labelRes.setText(String.format(getString(R.string.bmi_result), bmiValue) + "\n" + bmiObject.getName());
         } else {
             labelRes.setText("BMI value out of range: " + bmiValue);
         }

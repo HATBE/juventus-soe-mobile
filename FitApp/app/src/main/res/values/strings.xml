@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">FitApp</string>
+    <string name="app_name" translatable="false">FitApp</string>
+    <string name="greeting">Hello %s</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="calculate_bmi">Calculate BMI</string>
+    <string name="logout">Logout</string>
+    <string name="height">Height (cm)</string>
+    <string name="weight">Weight (kg)</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">Clear</string>
+    <string name="calculator_entry">Calculator Entry</string>
+    <string name="bmi_result">Your BMI is: %s</string>
+    <string name="legend">Legend</string>
 </resources>
