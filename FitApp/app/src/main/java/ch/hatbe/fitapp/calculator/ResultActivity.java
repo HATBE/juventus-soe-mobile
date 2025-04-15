@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import ch.hatbe.fitapp.R;
 import ch.hatbe.fitapp.rating.LegendActivity;
 import ch.hatbe.fitapp.util.BMI;
 import ch.hatbe.fitapp.util.BMIclass;
+import ch.hatbe.fitapp.util.DatabaseConnection;
 
 public class ResultActivity extends BaseActivity {
 
@@ -26,7 +28,11 @@ public class ResultActivity extends BaseActivity {
         TextView labelRes = findViewById(R.id.labelResult);
 
         Bundle extras = getIntent().getExtras();
-        double bmiValue = extras.getDouble("res");
+
+        int weight = extras.getInt("weight");
+        double height = extras.getDouble("height");
+
+        double bmiValue = BMI.calculate(height, weight);
 
         BMIclass bmiObject = BMI.getLegendByNumber(bmiValue);
         if (bmiObject != null) {
@@ -39,6 +45,21 @@ public class ResultActivity extends BaseActivity {
         btnLegend.setOnClickListener(view -> {
             Intent intent = new Intent(this, LegendActivity.class);
             startActivity(intent);
+        });
+
+        Button btnSave = findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(view -> {
+            DatabaseConnection dbConnection = new DatabaseConnection(ResultActivity.this);
+            dbConnection.open();
+
+            String date = java.time.LocalDate.now().toString();
+
+            var sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
+            String username = sharedPreferences.getString("currentUser", "NO_VALUE");
+
+            dbConnection.insertMeasurement(date, username, height, weight);
+
+            Toast.makeText(ResultActivity.this, R.string.saved_successfully, Toast.LENGTH_LONG).show();
         });
     }
 }

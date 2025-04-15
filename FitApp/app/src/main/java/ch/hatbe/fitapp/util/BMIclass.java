@@ -1,10 +1,5 @@
 package ch.hatbe.fitapp.util;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import androidx.annotation.NonNull;
-
 public class BMIclass {
     int id;
     private BMIcategory category;

@@ -12,4 +12,7 @@
     <string name="calculator_entry">Rechner eingabe</string>
     <string name="bmi_result">Dein BMI ist: %s</string>
     <string name="legend">Legende</string>
+    <string name="save">Speichern</string>
+    <string name="saved_successfully">Erfolgreich gespeichert</string>
+    <string name="history">verlauf</string>
 </resources>

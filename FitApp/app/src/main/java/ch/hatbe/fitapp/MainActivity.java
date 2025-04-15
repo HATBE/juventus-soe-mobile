@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity {
                     return;
                 }
 
-                editor.putString("username", username);
+                editor.putString("currentUser", username);
 
                 editor.apply();
 

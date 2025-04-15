@@ -17,7 +17,7 @@ public class LegendActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_legend);
 
-        var list = (ListView) findViewById(R.id.listView);
+        var list = (ListView) findViewById(R.id.listLegend);
 
         var adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
@@ -32,7 +32,5 @@ public class LegendActivity extends BaseActivity {
             intent.putExtra("id", clickedId);
             startActivity(intent);
         });
-
-
     }
 }

@@ -33,7 +33,9 @@ public class EntryActivity extends BaseActivity {
                 height = Double.parseDouble(inputHeight.getText().toString()) / 100;
 
                 Intent intent = new Intent(this, ResultActivity.class);
-                intent.putExtra("res", BMI.calculate(height, weight));
+                intent.putExtra("weight", weight);
+                intent.putExtra("height", height);
+
                 startActivity(intent);
             } catch (NumberFormatException e) {
                 Log.e("MAIN", "WRONG FORMAT");
