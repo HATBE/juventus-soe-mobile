@@ -8,8 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import ch.hatbe.fitapp.calculator.EntryActivity;
-import ch.hatbe.fitapp.config.OverviewActivity;
-import ch.hatbe.fitapp.history.SettingsActivity;
+import ch.hatbe.fitapp.history.OverviewActivity;
+import ch.hatbe.fitapp.config.SettingsActivity;
 import ch.hatbe.fitapp.rating.LegendActivity;
 
 public class BaseActivity extends AppCompatActivity {

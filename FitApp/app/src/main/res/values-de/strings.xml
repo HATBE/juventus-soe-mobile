@@ -15,4 +15,7 @@
     <string name="save">Speichern</string>
     <string name="saved_successfully">Erfolgreich gespeichert</string>
     <string name="history">verlauf</string>
+    <string name="userAdministration">Benutzerverwaltung</string>
+    <string name="createUser">Benutzer erstellen</string>
+    <string name="youAreNow">Du bist nun %s</string>
 </resources>

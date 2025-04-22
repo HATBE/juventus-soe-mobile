@@ -1,18 +1,14 @@
-package ch.hatbe.fitapp.config;
+package ch.hatbe.fitapp.history;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ch.hatbe.fitapp.BaseActivity;
 import ch.hatbe.fitapp.R;
-import ch.hatbe.fitapp.rating.DetailActivity;
 import ch.hatbe.fitapp.util.BMI;
 import ch.hatbe.fitapp.util.DatabaseConnection;
 import ch.hatbe.fitapp.util.Measurement;

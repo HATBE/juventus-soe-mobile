@@ -13,10 +13,13 @@
         android:theme="@style/Theme.FitApp"
         tools:targetApi="31">
         <activity
-            android:name=".history.SettingsActivity"
+            android:name=".config.UsersActivity"
             android:exported="false" />
         <activity
-            android:name=".config.OverviewActivity"
+            android:name=".config.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".history.OverviewActivity"
             android:exported="false" />
         <activity
             android:name=".rating.DetailActivity"
@@ -32,9 +35,6 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

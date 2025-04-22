@@ -23,11 +23,6 @@ public class HomeActivity extends BaseActivity {
 
         usernameLabel.setText(String.format(getString(R.string.greeting), username));
 
-        var btnLogout = (Button) findViewById(R.id.btnLogout);
-        btnLogout.setOnClickListener((view) -> {
-            this.logout();
-        });
-
         var btnBmi = (Button) findViewById(R.id.btnBmi);
         btnBmi.setOnClickListener((view) -> {
             this.changeToBmiPage();
@@ -39,13 +34,4 @@ public class HomeActivity extends BaseActivity {
         startActivity(intent);
     }
 
-    private void logout() {
-        var sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
-        var editor = sharedPreferences.edit();
-
-        editor.clear().apply();
-
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
 }

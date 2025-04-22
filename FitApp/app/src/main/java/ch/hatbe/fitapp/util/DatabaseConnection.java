@@ -31,6 +31,12 @@ public class DatabaseConnection {
         database.insert("measurement", null, values);
     }
 
+    public void insertUser(String username) {
+        ContentValues values = new ContentValues();
+        values.put("username", username);
+        database.insert("users", null, values);
+    }
+
     public List<Measurement> selectMeasurements() {
         List<Measurement> measurements = new ArrayList<>();
         Cursor cursor = database.query("measurement", null, null, null, null, null, null);
@@ -43,8 +49,6 @@ public class DatabaseConnection {
                 double height = cursor.getFloat(cursor.getColumnIndexOrThrow("height"));
                 int weight = cursor.getInt(cursor.getColumnIndexOrThrow("weight"));
 
-                System.out.println(height);
-
                 measurements.add(new Measurement(id, date, username, height, weight));
             } while (cursor.moveToNext());
             cursor.close();
@@ -53,9 +57,26 @@ public class DatabaseConnection {
         return measurements;
     }
 
+    public List<User> selectUsers() {
+        List<User> users = new ArrayList<>();
+        Cursor cursor = database.query("users", null, null, null, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+                String username = cursor.getString(cursor.getColumnIndexOrThrow("username"));
+
+                users.add(new User(id, username));
+            } while (cursor.moveToNext());
+            cursor.close();
+        }
+
+        return users;
+    }
+
     private static class DatabaseHelper extends SQLiteOpenHelper {
 
-        private static final int databaseVersion = 1;
+        private static final int databaseVersion = 2;
         private static final String databaseName = "data";
 
         public DatabaseHelper(Context context) {
@@ -72,11 +93,18 @@ public class DatabaseConnection {
                             "height REAL, " +
                             "weight INTEGER);"
             );
+
+            database.execSQL(
+                    "CREATE TABLE IF NOT EXISTS users (" +
+                            "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                            "username TEXT)"
+            );
         }
 
         @Override
         public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
             database.execSQL("DROP TABLE IF EXISTS measurement;");
+            database.execSQL("DROP TABLE IF EXISTS users;");
             onCreate(database);
         }
     }

@@ -15,4 +15,7 @@
     <string name="save">Save</string>
     <string name="saved_successfully">Saved successfully</string>
     <string name="history">Histroy</string>
+    <string name="userAdministration">User Administration</string>
+    <string name="createUser">Create user</string>
+    <string name="youAreNow">You are now %s</string>
 </resources>
