@@ -86,4 +86,10 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get saved => 'Messung gespeichert';
+
+  @override
+  String get settings => 'Einstellungen';
+
+  @override
+  String get manageUsers => 'User Verwalten';
 }

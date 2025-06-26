@@ -86,4 +86,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get saved => 'Measurement saved';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get manageUsers => 'Manage Users';
 }

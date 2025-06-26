@@ -20,5 +20,7 @@
   "maxLabel": "Maximalwert: {value}",
   "categoryLabel": "Kategorie: {name}",
   "saveMeasurement": "Messung speichern",
-  "saved": "Messung gespeichert"
+  "saved": "Messung gespeichert",
+  "settings": "Einstellungen",
+  "manageUsers": "User Verwalten"
 }

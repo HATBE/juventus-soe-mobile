@@ -20,5 +20,7 @@
    "maxLabel": "Max value: {value}",
   "categoryLabel": "Category: {name}",
   "saveMeasurement": "Save measurement",
-  "saved": "Measurement saved"
+  "saved": "Measurement saved",
+  "settings": "Settings",
+  "manageUsers": "Manage Users"
 }
