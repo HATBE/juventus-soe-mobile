@@ -17,5 +17,8 @@
   "generalLabel": "Allgemein: {value}",
   "specificLabel": "Spezifisch: {value}",
   "minLabel": "Minimalwert: {value}",
-  "maxLabel": "Maximalwert: {value}"
+  "maxLabel": "Maximalwert: {value}",
+  "categoryLabel": "Kategorie: {name}",
+  "saveMeasurement": "Messung speichern",
+  "saved": "Messung gespeichert"
 }

@@ -75,4 +75,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String maxLabel(Object value) {
     return 'Max value: $value';
   }
+
+  @override
+  String categoryLabel(Object name) {
+    return 'Category: $name';
+  }
+
+  @override
+  String get saveMeasurement => 'Save measurement';
+
+  @override
+  String get saved => 'Measurement saved';
 }

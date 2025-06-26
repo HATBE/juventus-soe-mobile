@@ -2,9 +2,12 @@
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:soem_flutter/generated/app_localizations.dart';
 import '../util/bmi.dart';
 import '../rating/detail_activity.dart';
+import '../database/db_helper.dart';
+import '../model/measurement.dart';
 
 class ResultActivity extends StatelessWidget {
   final double heightCm;
@@ -35,19 +38,50 @@ class ResultActivity extends StatelessWidget {
             ),
             Text(bmi.toStringAsFixed(2), style: const TextStyle(fontSize: 32)),
             const SizedBox(height: 20),
-            Text(AppLocalizations.of(context)!.category(categoryName)),
+            Text(AppLocalizations.of(context)!.categoryLabel(categoryName)),
             const SizedBox(height: 20),
             if (category != null)
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailActivity(category: category),
-                    ),
-                  );
-                },
-                child: const Text('Details anzeigen'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              DetailActivity(category: category),
+                        ),
+                      );
+                    },
+                    child: Text(AppLocalizations.of(context)!.details),
+                  ),
+                  ElevatedButton(
+                    onPressed: () async {
+                      final prefs = await SharedPreferences.getInstance();
+                      final username =
+                          prefs.getString('username') ?? 'Unbekannt';
+                      final date = DateTime.now().toIso8601String();
+
+                      final measurement = Measurement(
+                        username: username,
+                        heightCm: heightCm,
+                        weightKg: weightKg,
+                        bmi: bmi,
+                        date: date,
+                      );
+
+                      await DBHelper().insertMeasurement(measurement);
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(AppLocalizations.of(context)!.saved),
+                        ),
+                      );
+                    },
+                    child: Text(AppLocalizations.of(context)!.saveMeasurement),
+                  ),
+                ],
               ),
           ],
         ),

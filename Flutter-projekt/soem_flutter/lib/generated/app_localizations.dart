@@ -205,6 +205,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Max value: {value}'**
   String maxLabel(Object value);
+
+  /// No description provided for @categoryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Category: {name}'**
+  String categoryLabel(Object name);
+
+  /// No description provided for @saveMeasurement.
+  ///
+  /// In en, this message translates to:
+  /// **'Save measurement'**
+  String get saveMeasurement;
+
+  /// No description provided for @saved.
+  ///
+  /// In en, this message translates to:
+  /// **'Measurement saved'**
+  String get saved;
 }
 
 class _AppLocalizationsDelegate
