@@ -1,0 +1,15 @@
+{
+  "@@locale": "en",
+  "appTitle": "FitApp",
+  "login": "Login",
+  "username": "Username",
+  "greeting": "Welcome, {username}!",
+  "bmiInput": "BMI Input",
+  "height": "Height (cm)",
+  "weight": "Weight (kg)",
+  "calculate": "Calculate",
+  "result": "Result",
+  "bmiResult": "Your BMI is {value}",
+  "category": "Category: {category}",
+  "details": "Show details"
+}
