@@ -9,7 +9,13 @@
   "weight": "Weight (kg)",
   "calculate": "Calculate",
   "result": "Result",
-  "bmiResult": "Your BMI is {value}",
+  "bmiLabel": "Your BMI is:",
+  "detailsTitle": "Details: {specific}",
   "category": "Category: {category}",
-  "details": "Show details"
+  "details": "Show details",
+  "bmiResultTitle": "BMI Result",
+  "generalLabel": "General: {value}",
+  "specificLabel": "Specific: {value}",
+  "minLabel": "Min value: {value}",
+   "maxLabel": "Max value: {value}"
 }

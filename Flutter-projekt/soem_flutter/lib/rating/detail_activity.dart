@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import '../util/bmi.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 
 class DetailActivity extends StatelessWidget {
   final BMICategory category;
@@ -12,24 +13,38 @@ class DetailActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Details: ${category.specific}')),
+      appBar: AppBar(
+        title: Text(
+          AppLocalizations.of(context)!.detailsTitle(category.specific),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Allgemein: ${category.general}',
+              AppLocalizations.of(context)!.generalLabel(category.general),
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 10),
-            Text('Spezifisch: ${category.specific}'),
+            Text(
+              AppLocalizations.of(context)!.specificLabel(category.specific),
+            ),
             const SizedBox(height: 10),
             Text(
-              'Minimalwert: ${category.min != null ? category.min!.toStringAsFixed(1) : "< 15.0"}',
+              AppLocalizations.of(context)!.minLabel(
+                category.min != null
+                    ? category.min!.toStringAsFixed(1)
+                    : "< 15.0",
+              ),
             ),
             Text(
-              'Maximalwert: ${category.max != double.infinity ? category.max.toStringAsFixed(1) : "∞"}',
+              AppLocalizations.of(context)!.maxLabel(
+                category.max != double.infinity
+                    ? category.max.toStringAsFixed(1)
+                    : "∞",
+              ),
             ),
           ],
         ),

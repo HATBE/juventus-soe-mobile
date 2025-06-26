@@ -2,6 +2,7 @@
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 import '../shared/base_scaffold.dart';
 import 'result_activity.dart';
 
@@ -60,7 +61,7 @@ class _EntryActivityState extends State<EntryActivity> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _navigateToResult,
-              child: const Text('Berechnen'),
+              child: Text(AppLocalizations.of(context)!.calculate),
             ),
           ],
         ),

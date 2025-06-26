@@ -2,6 +2,7 @@
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 import '../util/bmi.dart';
 import '../rating/detail_activity.dart';
 
@@ -22,19 +23,19 @@ class ResultActivity extends StatelessWidget {
     final category = BMI.getCategoryBySpecific(categoryName);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('BMI Ergebnis')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.bmiResultTitle)),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Dein BMI beträgt:',
+              AppLocalizations.of(context)!.bmiLabel,
               style: Theme.of(context).textTheme.titleLarge,
             ),
             Text(bmi.toStringAsFixed(2), style: const TextStyle(fontSize: 32)),
             const SizedBox(height: 20),
-            Text('Kategorie: $categoryName'),
+            Text(AppLocalizations.of(context)!.category(categoryName)),
             const SizedBox(height: 20),
             if (category != null)
               ElevatedButton(

@@ -8,6 +8,8 @@ import 'calculator/entry_activity.dart';
 import 'rating/legend_activity.dart';
 import 'history/overview_activity.dart';
 import 'config/settings_activity.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 
 void main() {
   runApp(const FitApp());
@@ -20,10 +22,17 @@ class FitApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FitApp',
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: '/',
       routes: {
-        '/': (context) => const MainActivity(), // Login-Seite ohne Menü
+        '/': (context) => const MainActivity(),
         '/home': (context) => const HomeActivity(),
         '/calculator': (context) => const EntryActivity(),
         '/rating': (context) => const LegendActivity(),
@@ -59,7 +68,7 @@ class _MainActivityState extends State<MainActivity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('FitApp')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.appTitle)),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -73,7 +82,10 @@ class _MainActivityState extends State<MainActivity> {
               ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(onPressed: _handleLogin, child: const Text('Login')),
+            ElevatedButton(
+              onPressed: _handleLogin,
+              child: Text(AppLocalizations.of(context)!.login),
+            ),
           ],
         ),
       ),

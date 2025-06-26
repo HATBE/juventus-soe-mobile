@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 import 'shared/base_scaffold.dart';
 
 class HomeActivity extends StatefulWidget {
@@ -36,7 +37,7 @@ class _HomeActivityState extends State<HomeActivity> {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Text(
-          'Willkommen, $username!',
+          AppLocalizations.of(context)!.greeting(username),
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
