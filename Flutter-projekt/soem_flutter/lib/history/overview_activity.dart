@@ -21,8 +21,8 @@ class _OverviewActivityState extends State<OverviewActivity> {
   }
 
   Future<void> _loadMeasurements() async {
-    final prefs = await SharedPreferences.getInstance();
-    final username = prefs.getString('username') ?? '';
+    final sp = await SharedPreferences.getInstance();
+    final username = sp.getString('username') ?? '';
     final data = await DBHelper().getMeasurements(username);
     setState(() {
       _measurements = data;
@@ -42,9 +42,7 @@ class _OverviewActivityState extends State<OverviewActivity> {
             title: Text(
               '${m.date.split("T").first} – BMI: ${m.bmi.toStringAsFixed(1)}',
             ),
-            subtitle: Text(
-              'Größe: ${m.heightCm} cm | Gewicht: ${m.weightKg} kg',
-            ),
+            subtitle: Text('Size: ${m.heightCm} cm | Weight: ${m.weightKg} kg'),
           );
         },
       ),

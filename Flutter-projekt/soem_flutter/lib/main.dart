@@ -1,4 +1,4 @@
-// Verantwortlicher Mitarbeiter: Max Mustermann
+// Verantwortlicher Mitarbeiter: Aaron Gensetter
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ import 'package:soem_flutter/generated/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await ensureUserIsSet();
+  await ensureUserIsSet(); // ensure the user is set before running the app use anonymous user if not set
   runApp(const FitApp());
 }
 
@@ -46,8 +46,8 @@ class FitApp extends StatelessWidget {
 }
 
 Future<void> ensureUserIsSet() async {
-  final prefs = await SharedPreferences.getInstance();
-  if (!prefs.containsKey('username')) {
-    await prefs.setString('username', '<anonymous>');
+  final sp = await SharedPreferences.getInstance();
+  if (!sp.containsKey('username')) {
+    await sp.setString('username', '<anonymous>');
   }
 }

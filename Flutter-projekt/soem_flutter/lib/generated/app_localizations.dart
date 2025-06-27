@@ -235,6 +235,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Manage Users'**
   String get manageUsers;
+
+  /// No description provided for @insertBmi.
+  ///
+  /// In en, this message translates to:
+  /// **'Insert BMI'**
+  String get insertBmi;
+
+  /// No description provided for @changedUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Changed User to {username}'**
+  String changedUser(Object username);
+
+  /// No description provided for @createdUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Created new user'**
+  String get createdUser;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get add;
+
+  /// No description provided for @userManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'User Management'**
+  String get userManagement;
+
+  /// No description provided for @selectUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Select User'**
+  String get selectUser;
+
+  /// No description provided for @createUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Create User'**
+  String get createUser;
+
+  /// No description provided for @bmiCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'BMI Categories'**
+  String get bmiCategories;
+
+  /// No description provided for @rating.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating'**
+  String get rating;
+
+  /// No description provided for @history.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get history;
 }
 
 class _AppLocalizationsDelegate

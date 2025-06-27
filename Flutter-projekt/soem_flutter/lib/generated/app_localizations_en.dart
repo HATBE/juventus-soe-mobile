@@ -92,4 +92,39 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get manageUsers => 'Manage Users';
+
+  @override
+  String get insertBmi => 'Insert BMI';
+
+  @override
+  String changedUser(Object username) {
+    return 'Changed User to $username';
+  }
+
+  @override
+  String get createdUser => 'Created new user';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get add => 'Add';
+
+  @override
+  String get userManagement => 'User Management';
+
+  @override
+  String get selectUser => 'Select User';
+
+  @override
+  String get createUser => 'Create User';
+
+  @override
+  String get bmiCategories => 'BMI Categories';
+
+  @override
+  String get rating => 'Rating';
+
+  @override
+  String get history => 'History';
 }

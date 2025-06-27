@@ -24,7 +24,6 @@ class DBHelper {
       path,
       version: 1,
       onCreate: (db, version) async {
-        // Messdaten-Tabelle
         await db.execute('''
           CREATE TABLE measurement (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -36,26 +35,22 @@ class DBHelper {
           )
         ''');
 
-        // Benutzertabelle
         await db.execute('''
           CREATE TABLE user (
             username TEXT PRIMARY KEY
           )
         ''');
 
-        // Standardbenutzer <anonymous> einfügen
         await db.insert('user', {'username': '<anonymous>'});
       },
     );
   }
 
-  // Messung speichern
   Future<void> insertMeasurement(Measurement m) async {
     final database = await db;
     await database.insert('measurement', m.toMap());
   }
 
-  // Messungen eines bestimmten Benutzers holen
   Future<List<Measurement>> getMeasurements(String username) async {
     final database = await db;
     final maps = await database.query(
@@ -67,7 +62,6 @@ class DBHelper {
     return maps.map((e) => Measurement.fromMap(e)).toList();
   }
 
-  // Benutzer einfügen (mit Konfliktbehandlung)
   Future<void> insertUser(AppUser user) async {
     final dbClient = await db;
     await dbClient.insert(

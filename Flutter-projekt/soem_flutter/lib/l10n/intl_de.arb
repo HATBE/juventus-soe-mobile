@@ -5,7 +5,7 @@
   "username": "Benutzername",
   "greeting": "Willkommen, {username}!",
   "bmiInput": "BMI Eingabe",
-  "height": "Größe (cm)",
+  "height": "Grösse (cm)",
   "weight": "Gewicht (kg)",
   "calculate": "Berechnen",
   "result": "Ergebnis",
@@ -22,5 +22,16 @@
   "saveMeasurement": "Messung speichern",
   "saved": "Messung gespeichert",
   "settings": "Einstellungen",
-  "manageUsers": "User Verwalten"
+  "manageUsers": "User Verwalten",
+  "insertBmi": "BMI Einfügen",
+  "changedUser": "Benutzer geändert zu {username}",
+  "createdUser": "Neuen Benutzer erstellen",
+  "cancel": "Abbrechen",
+  "add": "Hinzufügen",
+  "userManagement": "Benutzerverwaltung",
+  "selectUser": "Benutzer Auswählen",
+  "createUser": "User Erstellen",
+  "bmiCategories": "BMI Kategorien",
+  "rating": "Bewertung",
+  "history": "Verlauf"
 }

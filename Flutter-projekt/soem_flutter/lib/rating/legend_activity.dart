@@ -1,9 +1,11 @@
-// Verantwortlicher Mitarbeiter: Max Mustermann
+// Verantwortlicher Mitarbeiter: Aaron Gensetter
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
 import '../shared/base_scaffold.dart';
 import '../util/bmi.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
+
 import 'detail_activity.dart';
 
 class LegendActivity extends StatelessWidget {
@@ -15,13 +17,13 @@ class LegendActivity extends StatelessWidget {
 
     return BaseScaffold(
       currentRoute: '/rating',
-      title: 'BMI Kategorien',
+      title: AppLocalizations.of(context)!.bmiCategories,
       body: ListView.builder(
         itemCount: categories.length,
         itemBuilder: (context, index) {
           final cat = categories[index];
           return ListTile(
-            title: Text('${cat.general} – ${cat.specific}'),
+            title: Text('${cat.general} - ${cat.specific}'),
             subtitle: Text(
               'BMI: ${cat.min != null ? cat.min!.toStringAsFixed(1) : "<"} – ${cat.max != double.infinity ? cat.max.toStringAsFixed(1) : "∞"}',
             ),

@@ -17,10 +17,21 @@
   "generalLabel": "General: {value}",
   "specificLabel": "Specific: {value}",
   "minLabel": "Min value: {value}",
-   "maxLabel": "Max value: {value}",
+  "maxLabel": "Max value: {value}",
   "categoryLabel": "Category: {name}",
   "saveMeasurement": "Save measurement",
   "saved": "Measurement saved",
   "settings": "Settings",
-  "manageUsers": "Manage Users"
+  "manageUsers": "Manage Users",
+  "insertBmi": "Insert BMI",
+  "changedUser": "Changed User to {username}",
+  "createdUser": "Created new user",
+  "cancel": "Cancel",
+  "add": "Add",
+  "userManagement": "User Management",
+  "selectUser": "Select User",
+  "createUser": "Create User",
+  "bmiCategories": "BMI Categories",
+  "rating": "Rating",
+  "history": "History"
 }

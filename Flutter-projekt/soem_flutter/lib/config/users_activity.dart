@@ -1,10 +1,11 @@
-// Verantwortlicher Mitarbeiter: Max Mustermann
+// Verantwortlicher Mitarbeiter: Aaron Gensetter
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../model/user.dart';
 import '../database/db_helper.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 
 class UsersActivity extends StatefulWidget {
   const UsersActivity({super.key});
@@ -25,8 +26,8 @@ class _UsersActivityState extends State<UsersActivity> {
 
   Future<void> _loadUsers() async {
     final users = await DBHelper().getUsers();
-    final prefs = await SharedPreferences.getInstance();
-    final saved = prefs.getString('username');
+    final sp = await SharedPreferences.getInstance();
+    final saved = sp.getString('username');
 
     String? fallbackSelected;
 
@@ -35,7 +36,7 @@ class _UsersActivityState extends State<UsersActivity> {
     } else {
       fallbackSelected = null;
       if (saved != null) {
-        print("⚠️ Gespeicherter Benutzer '$saved' existiert nicht mehr.");
+        print("ERROR: USER '$saved'does not exist!.");
       }
     }
 
@@ -46,11 +47,13 @@ class _UsersActivityState extends State<UsersActivity> {
   }
 
   Future<void> _saveSelection(String username) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('username', username);
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Benutzer geändert zu $username')));
+    final sp = await SharedPreferences.getInstance();
+    await sp.setString('username', username);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(AppLocalizations.of(context)!.changedUser(username)),
+      ),
+    );
   }
 
   Future<void> _addUserDialog() async {
@@ -59,16 +62,18 @@ class _UsersActivityState extends State<UsersActivity> {
     final name = await showDialog<String>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Neuen Benutzer erstellen'),
+        title: Text((AppLocalizations.of(context)!.createdUser)),
         content: TextField(
           controller: controller,
           autofocus: true,
-          decoration: const InputDecoration(hintText: 'Benutzername'),
+          decoration: InputDecoration(
+            hintText: AppLocalizations.of(context)!.username,
+          ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Abbrechen'),
+            child: Text(AppLocalizations.of(context)!.cancel),
           ),
           TextButton(
             onPressed: () {
@@ -77,7 +82,7 @@ class _UsersActivityState extends State<UsersActivity> {
                 Navigator.pop(ctx, trimmed);
               }
             },
-            child: const Text('Hinzufügen'),
+            child: Text(AppLocalizations.of(context)!.add),
           ),
         ],
       ),
@@ -93,7 +98,7 @@ class _UsersActivityState extends State<UsersActivity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Benutzerverwaltung')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.userManagement)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -101,7 +106,7 @@ class _UsersActivityState extends State<UsersActivity> {
             DropdownButton<String>(
               isExpanded: true,
               value: _selected,
-              hint: const Text('Benutzer wählen'),
+              hint: Text(AppLocalizations.of(context)!.selectUser),
               items: _users.map((u) {
                 return DropdownMenuItem(
                   value: u.username,
@@ -118,7 +123,7 @@ class _UsersActivityState extends State<UsersActivity> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _addUserDialog,
-              child: const Text('Benutzer hinzufügen'),
+              child: Text(AppLocalizations.of(context)!.createUser),
             ),
           ],
         ),

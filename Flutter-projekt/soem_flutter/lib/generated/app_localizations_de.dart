@@ -26,7 +26,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get bmiInput => 'BMI Eingabe';
 
   @override
-  String get height => 'Größe (cm)';
+  String get height => 'Grösse (cm)';
 
   @override
   String get weight => 'Gewicht (kg)';
@@ -92,4 +92,39 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get manageUsers => 'User Verwalten';
+
+  @override
+  String get insertBmi => 'BMI Einfügen';
+
+  @override
+  String changedUser(Object username) {
+    return 'Benutzer geändert zu $username';
+  }
+
+  @override
+  String get createdUser => 'Neuen Benutzer erstellen';
+
+  @override
+  String get cancel => 'Abbrechen';
+
+  @override
+  String get add => 'Hinzufügen';
+
+  @override
+  String get userManagement => 'Benutzerverwaltung';
+
+  @override
+  String get selectUser => 'Benutzer Auswählen';
+
+  @override
+  String get createUser => 'User Erstellen';
+
+  @override
+  String get bmiCategories => 'BMI Kategorien';
+
+  @override
+  String get rating => 'Bewertung';
+
+  @override
+  String get history => 'Verlauf';
 }

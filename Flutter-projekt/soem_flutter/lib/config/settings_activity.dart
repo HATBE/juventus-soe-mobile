@@ -1,9 +1,10 @@
-// Verantwortlicher Mitarbeiter: Max Mustermann
+// Verantwortlicher Mitarbeiter: Aaron Gensetter
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
 import 'users_activity.dart';
 import '../shared/base_scaffold.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 
 class SettingsActivity extends StatelessWidget {
   const SettingsActivity({super.key});
@@ -11,8 +12,8 @@ class SettingsActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScaffold(
-      currentRoute: '/settings', // Wichtig für aktives Menü-Item
-      title: 'Einstellungen',
+      currentRoute: '/settings',
+      title: AppLocalizations.of(context)!.settings,
       body: Center(
         child: ElevatedButton(
           onPressed: () {
@@ -21,7 +22,7 @@ class SettingsActivity extends StatelessWidget {
               MaterialPageRoute(builder: (_) => const UsersActivity()),
             );
           },
-          child: const Text('Benutzer verwalten'),
+          child: Text(AppLocalizations.of(context)!.manageUsers),
         ),
       ),
     );

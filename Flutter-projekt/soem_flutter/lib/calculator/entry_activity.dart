@@ -1,4 +1,4 @@
-// Verantwortlicher Mitarbeiter: Max Mustermann
+// Verantwortlicher Mitarbeiter: Aaron Gensetter
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
@@ -36,7 +36,7 @@ class _EntryActivityState extends State<EntryActivity> {
   Widget build(BuildContext context) {
     return BaseScaffold(
       currentRoute: '/calculator',
-      title: 'BMI Eingabe',
+      title: AppLocalizations.of(context)!.insertBmi,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -44,8 +44,8 @@ class _EntryActivityState extends State<EntryActivity> {
             TextField(
               controller: _heightController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Größe (cm)',
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context)!.height,
                 border: OutlineInputBorder(),
               ),
             ),
@@ -53,8 +53,8 @@ class _EntryActivityState extends State<EntryActivity> {
             TextField(
               controller: _weightController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Gewicht (kg)',
+              decoration: InputDecoration(
+                labelText: AppLocalizations.of(context)!.weight,
                 border: OutlineInputBorder(),
               ),
             ),

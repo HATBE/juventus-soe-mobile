@@ -1,4 +1,4 @@
-// Verantwortlicher Mitarbeiter: Max Mustermann
+// Verantwortlicher Mitarbeiter: Aaron Gensetter
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
@@ -58,9 +58,8 @@ class ResultActivity extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () async {
-                      final prefs = await SharedPreferences.getInstance();
-                      final username =
-                          prefs.getString('username') ?? 'Unbekannt';
+                      final sp = await SharedPreferences.getInstance();
+                      final username = sp.getString('username') ?? 'Unknown';
                       final date = DateTime.now().toIso8601String();
 
                       final measurement = Measurement(

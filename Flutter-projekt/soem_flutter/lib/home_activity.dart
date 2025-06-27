@@ -1,4 +1,4 @@
-// Verantwortlicher Mitarbeiter: Max Mustermann
+// Verantwortlicher Mitarbeiter: Aaron Gensetter
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
@@ -23,9 +23,9 @@ class _HomeActivityState extends State<HomeActivity> {
   }
 
   Future<void> _loadUsername() async {
-    final prefs = await SharedPreferences.getInstance();
+    final sp = await SharedPreferences.getInstance();
     setState(() {
-      username = prefs.getString('username') ?? 'Benutzer';
+      username = sp.getString('username') ?? 'User';
     });
   }
 

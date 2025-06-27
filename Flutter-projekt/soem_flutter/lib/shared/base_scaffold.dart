@@ -1,7 +1,8 @@
-// Verantwortlicher Mitarbeiter: Max Mustermann
+// Verantwortlicher Mitarbeiter: Aaron Gensetter
 // Letzte Änderung: 26.06.2025
 
 import 'package:flutter/material.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 
 class BaseScaffold extends StatelessWidget {
   final String currentRoute;
@@ -28,10 +29,30 @@ class BaseScaffold extends StatelessWidget {
               child: Text('FitApp Menü', style: TextStyle(color: Colors.white)),
             ),
             _buildMenuItem(context, 'Home', '/home', currentRoute),
-            _buildMenuItem(context, 'Calculator', '/calculator', currentRoute),
-            _buildMenuItem(context, 'Rating', '/rating', currentRoute),
-            _buildMenuItem(context, 'History', '/history', currentRoute),
-            _buildMenuItem(context, 'Settings', '/settings', currentRoute),
+            _buildMenuItem(
+              context,
+              AppLocalizations.of(context)!.calculate,
+              '/calculator',
+              currentRoute,
+            ),
+            _buildMenuItem(
+              context,
+              AppLocalizations.of(context)!.rating,
+              '/rating',
+              currentRoute,
+            ),
+            _buildMenuItem(
+              context,
+              AppLocalizations.of(context)!.history,
+              '/history',
+              currentRoute,
+            ),
+            _buildMenuItem(
+              context,
+              AppLocalizations.of(context)!.settings,
+              '/settings',
+              currentRoute,
+            ),
           ],
         ),
       ),
