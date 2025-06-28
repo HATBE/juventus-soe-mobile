@@ -119,7 +119,7 @@ abstract class AppLocalizations {
   /// No description provided for @greeting.
   ///
   /// In en, this message translates to:
-  /// **'Welcome, {username}!'**
+  /// **'Welcome to Fitapp, {username}!'**
   String greeting(Object username);
 
   /// No description provided for @bmiInput.
@@ -301,6 +301,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'History'**
   String get history;
+
+  /// No description provided for @noEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'No Entry'**
+  String get noEntry;
+
+  /// No description provided for @bmiCalculator.
+  ///
+  /// In en, this message translates to:
+  /// **'BMI Calculator'**
+  String get bmiCalculator;
 }
 
 class _AppLocalizationsDelegate

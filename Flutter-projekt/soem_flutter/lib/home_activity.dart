@@ -34,11 +34,29 @@ class _HomeActivityState extends State<HomeActivity> {
     return BaseScaffold(
       currentRoute: '/home',
       title: 'Home',
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Text(
-          AppLocalizations.of(context)!.greeting(username),
-          style: Theme.of(context).textTheme.titleLarge,
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          margin: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.blue.shade50,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 8,
+                offset: Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Text(
+            AppLocalizations.of(context)!.greeting(username),
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: Colors.blue.shade900,
+            ),
+          ),
         ),
       ),
     );

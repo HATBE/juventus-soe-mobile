@@ -3,7 +3,7 @@
   "appTitle": "FitApp",
   "login": "Login",
   "username": "Username",
-  "greeting": "Welcome, {username}!",
+  "greeting": "Welcome to Fitapp, {username}!",
   "bmiInput": "BMI Input",
   "height": "Height (cm)",
   "weight": "Weight (kg)",
@@ -33,5 +33,7 @@
   "createUser": "Create User",
   "bmiCategories": "BMI Categories",
   "rating": "Rating",
-  "history": "History"
+  "history": "History",
+  "noEntry": "No Entry",
+  "bmiCalculator": "BMI Calculator"
 }

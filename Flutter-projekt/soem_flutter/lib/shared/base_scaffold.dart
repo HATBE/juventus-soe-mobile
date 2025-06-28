@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:soem_flutter/generated/app_localizations.dart';
+import 'package:soem_flutter/generated/app_localizations.dart';
 
 class BaseScaffold extends StatelessWidget {
   final String currentRoute;
@@ -24,14 +25,17 @@ class BaseScaffold extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
+            DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
-              child: Text('FitApp Menü', style: TextStyle(color: Colors.white)),
+              child: Text(
+                AppLocalizations.of(context)!.appTitle,
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             _buildMenuItem(context, 'Home', '/home', currentRoute),
             _buildMenuItem(
               context,
-              AppLocalizations.of(context)!.calculate,
+              AppLocalizations.of(context)!.bmiCalculator,
               '/calculator',
               currentRoute,
             ),

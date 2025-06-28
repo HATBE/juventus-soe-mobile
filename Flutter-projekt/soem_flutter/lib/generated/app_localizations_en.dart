@@ -19,7 +19,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String greeting(Object username) {
-    return 'Welcome, $username!';
+    return 'Welcome to Fitapp, $username!';
   }
 
   @override
@@ -127,4 +127,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get history => 'History';
+
+  @override
+  String get noEntry => 'No Entry';
+
+  @override
+  String get bmiCalculator => 'BMI Calculator';
 }

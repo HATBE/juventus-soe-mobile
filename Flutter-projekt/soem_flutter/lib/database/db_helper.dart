@@ -71,7 +71,6 @@ class DBHelper {
     );
   }
 
-  // Alle Benutzer laden
   Future<List<AppUser>> getUsers() async {
     final dbClient = await db;
     final result = await dbClient.query('user');
